@@ -1,0 +1,1 @@
+{"statusCode": 500, "body": "Error during rotation: (1045, \"Access denied for user 'dbadmin'@'10.0.0.210' (using password: YES)\")"}
