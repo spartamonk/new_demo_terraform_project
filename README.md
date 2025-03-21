@@ -130,6 +130,25 @@ The project provides the following outputs:
 
 ---
 
+## **Running the Lambda Function**
+
+### **Manually Trigger the Lambda Function**
+You can manually invoke the Lambda function using the AWS CLI:
+```bash
+aws lambda invoke \
+  --function-name rds-password-rotation \
+  --payload '{}' \
+  output.json
+```
+
+- Replace `rds-password-rotation` with the name of your Lambda function.
+- The output of the function will be saved in the `output.json` file.
+
+### **Automated Execution**
+The Lambda function is automatically triggered by an EventBridge rule at regular intervals (e.g., every 10 minutes). You can adjust the schedule by modifying the `schedule_expression` in the Terraform configuration.
+
+---
+
 ## **Testing**
 
 1. **Trigger the Lambda Function**:
@@ -167,4 +186,3 @@ The project provides the following outputs:
 - Implement Slack notifications for password rotation failures.
 
 ---
-
